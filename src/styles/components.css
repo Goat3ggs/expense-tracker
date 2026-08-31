@@ -1,0 +1,272 @@
+/* =========================================
+   DASHBOARD COMPONENT - PLAYFUL & VIBRANT
+   ========================================= */
+
+.dashboard-container {
+  padding-top: var(--page-padding-mobile);
+  padding-bottom: var(--space-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* --- HEADER --- */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-inline: var(--space-2);
+}
+
+.header__welcome-msg {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-3xl); /* Mai mare și mai prietenos */
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.header__welcome-name {
+  /* Gradient text pentru nume (un detaliu foarte modern) */
+  background: linear-gradient(135deg, var(--color-primary), #ec4899);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: normal;
+}
+
+.header__title {
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+  font-weight: var(--fw-medium);
+}
+
+/* --- HERO SUMMARY (BALANCE) --- */
+.hero-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Gradient luminos în loc de alb */
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-hover)
+  );
+  padding: var(--space-8) var(--space-6);
+  border-radius: 32px; /* Curburi extreme, foarte 'bubbly' */
+  border: none;
+  box-shadow: 0 16px 32px rgba(159, 122, 234, 0.35); /* Umbră mov (glow) */
+  gap: var(--space-6);
+  color: #ffffff;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-summary:hover {
+  transform: translateY(-4px); /* Efect jucăuș la hover */
+}
+
+.balance {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.balance__label {
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.85); /* Alb translucid */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: var(--fw-bold);
+}
+
+.balance__amount {
+  font-size: 3.5rem; /* Tipografie masivă */
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Butonul principal din interiorul zonei mov */
+.hero-summary .btn-primary {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border: none;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-pill);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.hero-summary .btn-primary:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* --- INSIGHT CARD --- */
+.insight-card {
+  background-color: #fff0f6; /* Roz pudrat foarte fin */
+  border-radius: 24px;
+  padding: var(--space-5) var(--space-5);
+  border: 2px dashed #fbcfe8; /* Chenar jucăuș întrerupt */
+  transition: transform 0.3s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-2px) rotate(1deg); /* Se înclină ușor la hover */
+}
+
+.insight-card__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.insight-card__content p {
+  font-size: var(--fs-md);
+  color: #9d174d; /* Text roz închis pentru contrast */
+  font-weight: var(--fw-bold);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.btn-secondary {
+  background-color: #fbcfe8;
+  border: none;
+  color: #9d174d;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #f472b6;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* --- HISTORY SECTION --- */
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.history__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: var(--space-2);
+}
+
+.history__header h2 {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+}
+
+.btn-icon {
+  background: #f1f5f9;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Buton perfect rotund */
+  font-size: var(--fs-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-icon:hover {
+  background: #e2e8f0;
+  transform: rotate(90deg); /* Roata dințată se învârte vizual */
+}
+
+.history__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.history__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-surface); /* Rămâne alb curat */
+  padding: var(--space-4) var(--space-5);
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 4px 16px rgba(159, 122, 234, 0.06); /* Umbră extrem de fină */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.history__item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(159, 122, 234, 0.12);
+}
+
+.item__name {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  color: var(--color-text-primary);
+}
+
+.item__amount {
+  font-weight: 800;
+  font-size: var(--fs-md);
+}
+
+/* Modificatorii de status - Acum arată ca niște etichete (Pills) */
+.expense {
+  color: var(--color-error);
+  background-color: rgba(245, 101, 101, 0.1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+}
+
+.income {
+  color: var(--color-success);
+  background-color: rgba(72, 187, 120, 0.12);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+}
+/* Alinierea iconițelor în lista de tranzacții */
+.item__info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.item__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  font-size: var(--fs-lg);
+}
+
+.expense-icon {
+  background-color: #fff0f6;
+  color: var(--color-error);
+}
+
+.income-icon {
+  background-color: #f0fdf4;
+  color: var(--color-success);
+}
