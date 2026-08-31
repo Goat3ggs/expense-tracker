@@ -1,3 +1,4 @@
+import ExpenseChart from "./ExpenseChart";
 import SummaryCards from "./SummaryCards";
 import TransactionList from "./TransactionList";
 
@@ -22,7 +23,12 @@ export default function Dashboard() {
       </section>
 
       <SummaryCards />
-      <TransactionList />
+
+      {/* New Wrapper for Bento Layout (Side-by-Side on Desktop) */}
+      <div className="bento-layout">
+        <ExpenseChart />
+        <TransactionList />
+      </div>
     </div>
   );
 }
