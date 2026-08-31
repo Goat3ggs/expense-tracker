@@ -1,8 +1,11 @@
 import ExpenseChart from "./ExpenseChart";
 import SummaryCards from "./SummaryCards";
+import TransactionForm from "./TransactionForm";
 import TransactionList from "./TransactionList";
+import { useState } from "react";
 
 export default function Dashboard() {
+  const [isFormOpen, setIsFormOpen] = useState(false);
   return (
     <div className="dashboard-container">
       {/* Top header */}
@@ -19,7 +22,9 @@ export default function Dashboard() {
           <span className="balance__label">Current Balance</span>
           <span className="balance__amount">$280.00</span>
         </div>
-        <button className="btn-primary">Add Transaction</button>
+        <button className="btn-primary" onClick={() => setIsFormOpen(true)}>
+          Add Transaction
+        </button>
       </section>
 
       <SummaryCards />
@@ -29,6 +34,8 @@ export default function Dashboard() {
         <ExpenseChart />
         <TransactionList />
       </div>
+
+      {isFormOpen && <TransactionForm onClose={() => setIsFormOpen(false)} />}
     </div>
   );
 }

@@ -1,7 +1,21 @@
-export default function TransactionForm() {
+import { FiX } from "react-icons/fi";
+
+export default function TransactionForm({ onClose }) {
   return (
-    <div className="form-overlay">
-      <form className="transaction-form">
+    //  1. Close modal when clicking the dark overlay
+    <div className="form-overlay" onClick={onClose}>
+      {/* 2. Stop the click from reaching the overlay when clicking inside the form inputs */}
+      <form className="transaction-form" onClick={(e) => e.stopPropagation()}>
+        {/* Close button positioned at the top */}
+        <button
+          type="button"
+          className="btn-close"
+          onClick={onClose}
+          aria-label="Close"
+        >
+          <FiX />
+        </button>
+
         {/* Type selection area (Income/Expense) */}
         <div className="transaction-type-toggle">
           <button type="button" className="type-btn active">
