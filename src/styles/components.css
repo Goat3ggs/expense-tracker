@@ -270,3 +270,173 @@
   background-color: #f0fdf4;
   color: var(--color-success);
 }
+
+/* =========================================
+   GLOBAL BUTTONS
+   ========================================= */
+
+/* Base primary button for global usage */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-pill);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(159, 122, 234, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(159, 122, 234, 0.35);
+}
+
+/* =========================================
+   TRANSACTION FORM (BOTTOM SHEET / MODAL)
+   ========================================= */
+
+/* Mobile-first: Bottom Sheet style */
+.transaction-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-surface);
+  padding: var(--space-6) var(--space-5) var(--space-10);
+  border-radius: 32px 32px 0 0; /* Rounded top corners only */
+  box-shadow: 0 -8px 32px rgba(159, 122, 234, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  z-index: 100;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Desktop: Modal style */
+@media (min-width: 64rem) {
+  .transaction-form {
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 480px;
+    border-radius: 32px; /* Fully rounded */
+    padding: var(--space-8);
+    box-shadow: 0 16px 48px rgba(159, 122, 234, 0.25);
+  }
+}
+
+/* --- TYPE TOGGLE (Income / Spending) --- */
+.transaction-type-toggle {
+  display: flex;
+  background-color: var(--color-surface-elevated);
+  border-radius: var(--radius-pill);
+  padding: var(--space-1);
+  gap: var(--space-1);
+}
+
+.type-btn {
+  flex: 1;
+  padding: var(--space-3);
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-pill);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.type-btn.active {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(159, 122, 234, 0.12);
+}
+
+/* --- FORM GROUPS & INPUTS --- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: var(--space-2); /* Slight indent for visual hierarchy */
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: var(--space-4) var(--space-5);
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
+  background-color: #ffffff;
+  font-size: var(--fs-md);
+  font-family: inherit;
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
+  appearance: none; /* Removes native OS styling on iOS */
+}
+
+/* Playful glow effect on focus */
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(159, 122, 234, 0.15);
+}
+
+/* --- AMOUNT INPUT WITH CURRENCY --- */
+.input-with-currency {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-currency input {
+  padding-right: 4.5rem; /* Prevents text from overlapping the EUR label */
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+}
+
+.currency-label {
+  position: absolute;
+  right: var(--space-5);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-muted);
+  font-size: var(--fs-md);
+  pointer-events: none; /* Allows clicking through the text to the input */
+}
+
+/* --- TWO COLUMN ROW (Date & Category) --- */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+/* --- ERROR MESSAGE --- */
+.transaction-form__error {
+  background-color: #fff0f6;
+  color: var(--color-error);
+  padding: var(--space-3) var(--space-4);
+  border-radius: 16px;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-align: center;
+  border: 1px solid rgba(245, 101, 101, 0.2);
+}
+
+.transaction-form__error.hidden {
+  display: none;
+}
